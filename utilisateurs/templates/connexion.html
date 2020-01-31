@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Ma page d'accueil{% endblock %}
+    {% block content %}
+    <div class="row">
+        <div id="connexion" class="col-lg-5 offset-3">
+            <h5>Veuillez-vous connecter</h5>
+            <form action="{% url "accueil" %}" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+
+
